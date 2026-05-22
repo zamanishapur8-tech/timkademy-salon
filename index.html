@@ -43,7 +43,7 @@
             width: 100%;
             max-width: 1100px;
             height: 100%;
-            max-height: 680px;
+            max-height: 700px;
             background: var(--bg-slide);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             overflow: hidden;
@@ -56,7 +56,6 @@
                 max-width: 100%;
                 max-height: 100vh;
                 height: 100vh;
-                border-radius: 0;
             }
         }
 
@@ -65,7 +64,7 @@
             flex-direction: column;
             width: 100%;
             height: 100%;
-            padding: 40px 60px 80px 60px;
+            padding: 40px 60px 90px 60px;
             position: relative;
             overflow-y: auto;
         }
@@ -81,21 +80,21 @@
         }
 
         .slide-header {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border-left: 6px solid var(--accent);
-            padding-left: 20px;
+            padding-left: 15px;
         }
 
         .slide-header h2 {
             font-family: 'Poppins', sans-serif;
             color: var(--primary);
-            font-size: 28px;
+            font-size: 26px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .slide-header .section-number {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--accent);
             font-weight: 700;
             text-transform: uppercase;
@@ -103,33 +102,36 @@
             display: block;
         }
 
-        /* BALISE IMAGE STANDARDISÉE */
-        .slide-img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            margin: 0 auto;
+        /* MISE EN PAGE DES DIAPOSITIVES */
+        .slide-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 10px;
         }
 
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+        .image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
             align-items: center;
         }
 
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+        .slide-img {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+            border: 1px solid #e2e8f0;
         }
 
         @media (max-width: 768px) {
-            .slide { padding: 25px 20px 80px 20px; }
-            .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 20px; }
-            .slide-header h2 { font-size: 22px; }
+            .slide { padding: 25px 20px 90px 20px; }
+            .slide-layout { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+            .slide-header h2 { font-size: 20px; }
+            .slide-img { max-width: 100%; }
         }
 
         .card {
@@ -138,6 +140,7 @@
             padding: 20px;
             border-top: 4px solid var(--primary);
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            margin-top: 15px;
         }
 
         .card h3 {
@@ -150,15 +153,14 @@
             gap: 10px;
         }
 
-        .card h3 i { color: var(--accent); }
         .card p, .slide p { font-size: 15px; line-height: 1.6; color: var(--text-main); }
 
-        ul.custom-list { list-style: none; }
+        ul.custom-list { list-style: none; text-align: left; }
         ul.custom-list li {
             position: relative;
             padding-left: 25px;
             margin-bottom: 10px;
-            font-size: 15px;
+            font-size: 14.5px;
             line-height: 1.5;
         }
         ul.custom-list li::before {
@@ -169,24 +171,8 @@
             left: 0;
             top: 2px;
             color: var(--accent);
-            font-size: 13px;
+            font-size: 12px;
         }
-
-        table.filiere-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table.filiere-table th {
-            background: var(--primary);
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            padding: 12px 15px;
-            font-size: 14px;
-            text-align: left;
-            text-transform: uppercase;
-        }
-        table.filiere-table td { padding: 12px 15px; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
-        table.filiere-table tr:nth-child(even) { background: #f8fafc; }
 
         .slide-cover {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
@@ -195,15 +181,16 @@
             align-items: center;
             text-align: center;
         }
-        .slide-cover h1 { font-family: 'Poppins', sans-serif; font-size: 46px; color: white; letter-spacing: 2px; margin-bottom: 5px; }
-        .slide-cover .motto { font-size: 18px; color: var(--accent); font-weight: 500; margin-bottom: 25px; font-style: italic; }
+        .slide-cover h1 { font-family: 'Poppins', sans-serif; font-size: 42px; color: white; letter-spacing: 1.5px; margin-top: 10px; }
+        .slide-cover .motto { font-size: 17px; color: var(--accent); font-weight: 500; margin-bottom: 25px; font-style: italic; }
         .slide-cover .meta-box {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.07);
+            padding: 15px 35px;
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* REGLAGES DES BOUTONS ET NAVIGATION */
         .controls {
             position: absolute;
             bottom: 0;
@@ -223,7 +210,7 @@
             background: var(--primary);
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 6px;
             cursor: pointer;
             font-family: 'Poppins', sans-serif;
@@ -232,12 +219,14 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            transition: background 0.2s;
         }
+        .nav-btn:hover:not(:disabled) { background: var(--primary-dark); }
         .nav-btn:disabled { background: #cbd5e1; cursor: not-allowed; }
 
         .dots-container { display: flex; gap: 8px; }
-        .dot { width: 10px; height: 10px; background: #cbd5e1; border-radius: 50%; cursor: pointer; }
-        .dot.active { background: var(--accent); width: 24px; border-radius: 10px; }
+        .dot { width: 9px; height: 9px; background: #cbd5e1; border-radius: 50%; cursor: pointer; transition: all 0.3s; }
+        .dot.active { background: var(--accent); width: 22px; border-radius: 10px; }
 
         .slide-footer {
             position: absolute;
@@ -253,9 +242,9 @@
         }
 
         @media (max-width: 768px) {
-            .slide-footer { left: 24px; right: 24px; bottom: 80px; }
-            .controls { padding: 0 20px; }
-            .slide-cover h1 { font-size: 32px; }
+            .slide-footer { left: 20px; right: 20px; bottom: 80px; display: none; }
+            .controls { padding: 0 15px; }
+            .slide-cover h1 { font-size: 30px; }
         }
     </style>
 </head>
@@ -264,13 +253,13 @@
 <div class="presentation-container">
 
     <div class="slide slide-cover active" id="slide-1">
-        <div style="transform: translateY(-10px);">
-            <img src="Diapositive1.PNG" alt="Couverture Timkademy" class="slide-img" style="max-width: 140px; margin-bottom: 20px; box-shadow: none;">
+        <div style="transform: translateY(-5px); display: flex; flex-direction: column; align-items: center;">
+            <img src="Diapositive1.PNG" alt="Logo Emblem Timkademy" style="width: 130px; height: auto; margin-bottom: 15px; border-radius: 50%; border: 2px solid var(--accent);">
             <h1>TIMKADEMY</h1>
             <p class="motto">"Inspirer la jeunesse pour un Mali conscient et prospère"</p>
             <div class="meta-box">
-                <p style="color: #f8fafc; font-weight: 600; font-size: 16px;">SALON DES MÉTIERS — LYCÉE KODONSO</p>
-                <p style="color: var(--accent); font-size: 13px; font-weight: bold; letter-spacing: 1px; margin-top: 5px;">SAMEDI 23 MAI 2026</p>
+                <p style="color: #f8fafc; font-weight: 600; font-size: 15px; letter-spacing: 0.5px;">SALON DES MÉTIERS — LYCÉE KODONSO</p>
+                <p style="color: var(--accent); font-size: 13px; font-weight: bold; letter-spacing: 1px; margin-top: 3px;">SAMEDI 23 MAI 2026</p>
             </div>
         </div>
     </div>
@@ -280,20 +269,23 @@
             <span class="section-number">Section 01</span>
             <h2>Présentation Générale</h2>
         </div>
-        <div class="grid-2">
+        <div class="slide-layout">
             <div>
-                <p style="margin-bottom: 15px; font-size: 17px; font-weight: 600; color: var(--primary);">
+                <p style="margin-bottom: 12px; font-size: 17px; font-weight: 600; color: var(--primary);">
                     Devenir l'Architecte de Son Propre Destin
                 </p>
-                <p>Timkademy est une structure spécialisée dans l’orientation académique et le mentorat au Mali. Notre approche repose sur l'<strong>Éducation Consciente</strong> : donner aux jeunes les clés psychologiques et intellectuelles pour piloter leur parcours.</p>
+                <p>Timkademy est un modèle éducatif de pointe spécialisé dans l'orientation stratégique et le mentorat au Mali. Notre concept d'<strong>Éducation Consciente</strong> arme intellectuellement et psychologiquement les lycéens pour piloter leur avenir académique.</p>
+                <div class="card">
+                    <p style="font-size: 13.5px; font-style: italic; color: var(--primary-dark);">"L'éducation consciente permet de révéler le potentiel et de tracer une voie claire vers l'excellence."</p>
+                </div>
             </div>
-            <div>
+            <div class="image-container">
                 <img src="Diapositive2.PNG" alt="L'Éducation Consciente" class="slide-img">
             </div>
         </div>
         <div class="slide-footer">
-            <span>Timkademy 2026</span>
-            <span>Siège : Boulkassoumbougou, Bamako</span>
+            <span>Timkademy Blueprint v1</span>
+            <span>Boulkassoumbougou, Bamako</span>
         </div>
     </div>
 
@@ -302,23 +294,25 @@
             <span class="section-number">Section 02 & 03</span>
             <h2>Le Constat & Le Défi</h2>
         </div>
-        <div class="grid-2">
+        <div class="slide-layout">
             <div>
-                <img src="Diapositive3.PNG" alt="Le Vide de l'Orientation" class="slide-img">
-            </div>
-            <div>
-                <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 18px;"><i class="fa-solid fa-triangle-exclamation" style="color: var(--accent);"></i> Le Vide entre Lycée et Emploi</h3>
-                <p>Trop de jeunes bacheliers manquent d'informations réelles sur le marché de l'emploi et les filières industrielles ou techniques, ce qui entraîne :</p>
-                <ul class="custom-list" style="margin-top: 10px;">
-                    <li>Une faible motivation scolaire.</li>
-                    <li>Des choix d'études inadaptés.</li>
-                    <li>Des difficultés d'insertion professionnelle futures.</li>
+                <p style="font-size: 16px; font-weight: 600; color: #dc2626; margin-bottom: 10px;">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Le Vide de l'Orientation
+                </p>
+                <p>Il existe une rupture critique entre les connaissances théoriques acquises au lycée et la réalité industrielle ou technique. Ce manque d'informations concrètes cause :</p>
+                <ul class="custom-list" style="margin-top: 12px;">
+                    <li>Une baisse de la motivation et de l'ambition scolaire.</li>
+                    <li>Des choix d'études par défaut et inadaptés.</li>
+                    <li>De lourdes difficultés d'insertion sur le marché de l'emploi.</li>
                 </ul>
+            </div>
+            <div class="image-container">
+                <img src="Diapositive3.PNG" alt="Le Constat - Vide de l'orientation" class="slide-img">
             </div>
         </div>
         <div class="slide-footer">
-            <span>Analyse des Besoins</span>
-            <span>Rapprochement École-Métiers</span>
+            <span>Rapprochement Lycée - Marché de l'Emploi</span>
+            <span>Analyse structurelle</span>
         </div>
     </div>
 
@@ -327,16 +321,20 @@
             <span class="section-number">Section 04</span>
             <h2>L'Approche Stratégique</h2>
         </div>
-        <div class="grid-2">
+        <div class="slide-layout">
             <div>
-                <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 18px;"><i class="fa-solid fa-bridge" style="color: var(--accent);"></i> Un Pont Vers l'Excellence</h3>
-                <p>Pour combler ce vide, Timkademy déploie une matrice de solutions intégrées reliant directement le parcours théorique du lycée aux réalités de l'entreprise.</p>
-                <div class="card" style="margin-top: 15px; padding: 15px;">
-                    <p style="font-size: 14px; font-style: italic;">Orientation Académique • Mentorat Éducatif • Accompagnement Scolaire • Ateliers Pratiques • Outils Numériques</p>
-                </div>
+                <p style="margin-bottom: 12px; font-size: 16px; font-weight: 600; color: var(--primary);">
+                    <i class="fa-solid fa-bridge"></i> Bâtir un Pont Vers l'Excellence
+                </p>
+                <p>Pour combler ce vide, la matrice d'intervention de Timkademy déploie 5 solutions interconnectées assurant le passage sécurisé du statut d'élève à celui de professionnel accompli :</p>
+                <ul class="custom-list" style="margin-top: 10px;">
+                    <li>Orientation Académique & Mentorat Éducatif.</li>
+                    <li>Soutien Scolaire Structuré & Ateliers Pratiques.</li>
+                    <li>Suivi et ressources via le Numérique Éducatif.</li>
+                </ul>
             </div>
-            <div>
-                <img src="Diapositive4.PNG" alt="Le Pont Timkademy" class="slide-img">
+            <div class="image-container">
+                <img src="Diapositive4.PNG" alt="Le Pont de solutions" class="slide-img">
             </div>
         </div>
     </div>
@@ -346,37 +344,19 @@
             <span class="section-number">Section 05 & 06</span>
             <h2>Secteurs & Métiers Cibles</h2>
         </div>
-        <div class="grid-2">
+        <div class="slide-layout">
             <div>
-                <table class="filiere-table">
-                    <thead>
-                        <tr>
-                            <th>Secteurs Cibles</th>
-                            <th>Partenaires & Métiers</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Génie Civil & Topo</strong></td>
-                            <td>Cabinet BAKA TOPO</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Mines & Géologie</strong></td>
-                            <td>Ingénieurs & Experts Industrie</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Numérique & IA</strong></td>
-                            <td>Solutions Digitales Timkademy</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Industrie & Logistique</strong></td>
-                            <td>Chefs d'Entreprises Locaux</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p style="margin-bottom: 12px;">Nous orientons prioritairement la jeunesse vers les domaines de souveraineté économique et de développement pour le pays :</p>
+                <div class="card" style="margin-top: 0;">
+                    <ul class="custom-list">
+                        <li><strong>Génie Civil & Topographie :</strong> En liaison technique avec notre partenaire le cabinet <em>BAKA TOPO</em>.</li>
+                        <li><strong>Mines & Géologie :</strong> Immersion dans les métiers de l'extraction.</li>
+                        <li><strong>Numérique, IA & Énergies :</strong> Nouvelles compétences clés.</li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <img src="Diapositive5.PNG" alt="Matrice des filières" class="slide-img">
+            <div class="image-container">
+                <img src="Diapositive5.PNG" alt="Matrice des filières cibles" class="slide-img">
             </div>
         </div>
     </div>
@@ -384,20 +364,22 @@
     <div class="slide" id="slide-6">
         <div class="slide-header">
             <span class="section-number">Section 07 & 08</span>
-            <h2>Méthodologie Complémentaire</h2>
+            <h2>Méthodologie d'Apprentissage</h2>
         </div>
-        <div class="grid-2">
+        <div class="slide-layout">
             <div>
-                <img src="Diapositive6.PNG" alt="Le Trépied Pédagogique" class="slide-img">
-            </div>
-            <div>
-                <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 18px;"><i class="fa-solid fa-brain" style="color: var(--accent);"></i> Le Trépied Pédagogique</h3>
-                <p>Nos interventions s'adossent sur trois piliers d'apprentissage essentiels pour former des esprits structurés :</p>
-                <ul class="custom-list" style="margin-top: 10px;">
-                    <li><strong>Lecture :</strong> Assimilation des données et documentations scientifiques.</li>
-                    <li><strong>Écriture :</strong> Structuration claire des rapports et projets.</li>
-                    <li><strong>Écoute active :</strong> Captation fine du savoir des mentors.</li>
+                <p style="font-size: 16px; font-weight: 600; color: var(--primary); margin-bottom: 10px;">
+                    Le Trépied Fondamental
+                </p>
+                <p>L'élévation des compétences passe par une discipline intellectuelle stricte, articulée autour de 3 actions indissociables :</p>
+                <ul class="custom-list" style="margin-top: 12px;">
+                    <li><strong>Lecture :</strong> Explorer, chercher et analyser la donnée.</li>
+                    <li><strong>Écriture :</strong> Organiser sa pensée et formaliser ses rapports.</li>
+                    <li><strong>Écoute active :</strong> S'approprier l'expérience métier des experts.</li>
                 </ul>
+            </div>
+            <div class="image-container">
+                <img src="Diapositive6.PNG" alt="Le Trépied Pédagogique" class="slide-img">
             </div>
         </div>
     </div>
@@ -405,19 +387,19 @@
     <div class="slide" id="slide-7">
         <div class="slide-header">
             <span class="section-number">Section 09</span>
-            <h2>Votre Place dans l'Écosystème</h2>
+            <h2>L'Écosystème Partagé</h2>
         </div>
-        <div class="grid-2">
+        <div class="slide-layout">
             <div>
-                <p style="margin-bottom: 15px;">Chaque acteur trouve une valeur ajoutée claire au sein du dispositif Timkademy :</p>
+                <p style="margin-bottom: 10px; font-weight: 600; color: var(--primary);">Un cercle vertueux gagnant-gagnant :</p>
                 <ul class="custom-list">
-                    <li><strong>Élèves :</strong> Clarté sur l'avenir, ambition et motivation.</li>
-                    <li><strong>Parents :</strong> Parcours sécurisants vers des filières porteuses.</li>
-                    <li><strong>Professionnels :</strong> Transmission et détection des futurs talents.</li>
+                    <li><strong>Pour l'Élève :</strong> Clarté sur l'avenir et ambition décuplée.</li>
+                    <li><strong>Pour les Parents :</strong> Sérénité face à un investissement scolaire sécurisé.</li>
+                    <li><strong>Pour le Professionnel :</strong> Canal idéal pour transmettre son expertise et détecter des talents.</li>
                 </ul>
             </div>
-            <div>
-                <img src="Diapositive7.PNG" alt="Écosystème Timkademy" class="slide-img">
+            <div class="image-container">
+                <img src="Diapositive7.PNG" alt="Écosystème d'acteurs" class="slide-img">
             </div>
         </div>
     </div>
@@ -427,16 +409,20 @@
             <span class="section-number">Section 10</span>
             <h2>Gouvernance & Cadre Légal</h2>
         </div>
-        <div class="grid-2">
+        <div class="slide-layout">
             <div>
-                <div class="card" style="margin-bottom: 15px;">
-                    <h4 style="font-family:'Poppins'; color:var(--primary); font-size:15px; margin-bottom:5px;">Équipe Dirigeante Officielle</h4>
-                    <p style="font-size:13px; color:var(--text-light);">• M. Issa SANTARA (Directeur Général)<br>• Mme Adizatou Hamza MAIGA (Direction Pédagogique)<br>• M. Cheick Oumar SYLLA (Direction des Opérations)</p>
+                <p>Toutes nos activités en milieu scolaire s'effectuent en totale conformité administrative avec le <strong>Ministère de l'Éducation Nationale du Mali</strong>.</p>
+                <div class="card">
+                    <h4 style="font-family:'Poppins'; font-size:14px; color:var(--primary); margin-bottom:6px;">Équipe d'Administration Officielle :</h4>
+                    <p style="font-size:13.5px; line-height: 1.5; color: var(--text-light);">
+                        • <strong>M. Issa SANTARA</strong> (Directeur Général)<br>
+                        • <strong>Mme Adizatou Hamza MAIGA</strong> (Direction Pédagogique)<br>
+                        • <strong>M. Cheick Oumar SYLLA</strong> (Direction des Opérations)
+                    </p>
                 </div>
-                <p style="font-size: 14px;">Les interventions en milieu scolaire s'exécutent en accord avec le <strong>Ministère de l'Éducation Nationale</strong> et les Académies de Bamako.</p>
             </div>
-            <div>
-                <img src="Diapositive8.PNG" alt="Cadre Administratif" class="slide-img">
+            <div class="image-container">
+                <img src="Diapositive8.PNG" alt="Cadre Légal et Identifiants" class="slide-img">
             </div>
         </div>
         <div class="slide-footer">
@@ -448,19 +434,22 @@
     <div class="slide" id="slide-9">
         <div class="slide-header">
             <span class="section-number">Section 11</span>
-            <h2>Vision & Contacts</h2>
+            <h2>Agir Dès Aujourd'hui</h2>
         </div>
-        <div class="grid-2">
+        <div class="slide-layout">
             <div>
-                <img src="Diapositive9.PNG" alt="Contacts Timkademy" class="slide-img">
+                <p style="font-size: 16px; font-weight: 600; color: var(--primary); margin-bottom: 10px;">Votre plan d'action au Salon :</p>
+                <ol style="margin-left: 20px; margin-bottom: 15px; font-size: 14.5px; line-height: 1.6;">
+                    <li><strong>Échanger :</strong> Venez poser vos questions à nos ingénieurs sur le stand.</li>
+                    <li><strong>S'inscrire :</strong> Intégrez nos cohortes de mentorat.</li>
+                    <li><strong>Partager :</strong> Diffusez ce diaporama à vos proches.</li>
+                </ol>
+                <p style="font-size: 13.5px; color: var(--text-light); border-top: 1px solid #e2e8f0; padding-top: 8px;">
+                    <strong>Contact :</strong> contact@timkademy.com<br><strong>Tél :</strong> +223 65 12 30 25 / +223 90 77 27 70
+                </p>
             </div>
-            <div class="card" style="border-top-color: var(--accent);">
-                <h3 style="font-size: 16px; margin-bottom: 12px;"><i class="fa-solid fa-address-book"></i> Nous Rejoindre</h3>
-                <ul class="custom-list" style="font-size: 14px;">
-                    <li><strong>WhatsApp / Tél :</strong><br><span style="color:var(--primary); font-weight:700;">+223 65 12 30 25</span> / <span style="color:var(--primary); font-weight:700;">+223 90 77 27 70</span></li>
-                    <li style="margin-top: 5px;"><strong>E-mail :</strong> contact@timkademy.com</li>
-                    <li style="margin-top: 5px;"><strong>Siège :</strong> Boulkassoumbougou, Bamako, Mali</li>
-                </ul>
+            <div class="image-container">
+                <img src="Diapositive9.PNG" alt="Contacts et Vision Finale" class="slide-img">
             </div>
         </div>
     </div>
@@ -480,6 +469,7 @@
     const dotsContainer = document.getElementById('dots-container');
     let currentSlide = 0;
 
+    // Génération dynamique des indicateurs du bas (dots)
     slides.forEach((_, index) => {
         const dot = document.createElement('div');
         dot.classList.add('dot');
@@ -492,7 +482,7 @@
 
     function updateControls() {
         prevBtn.disabled = currentSlide === 0;
-        nextBtn.innerHTML = currentSlide === slides.length - 1 ? 'Fin <i class="fa-solid fa-check"></i>' : 'Suivant <i class="fa-solid fa-arrow-right"></i>';
+        nextBtn.innerHTML = currentSlide === slides.length - 1 ? 'Recommencer <i class="fa-solid fa-rotate-left"></i>' : 'Suivant <i class="fa-solid fa-arrow-right"></i>';
     }
 
     function goToSlide(index) {
@@ -504,7 +494,7 @@
         
         slides[currentSlide].classList.add('active');
         dots[currentSlide].classList.add('active');
-        slides[currentSlide].scrollTop = 0;
+        slides[currentSlide].scrollTop = 0; // Remonte en haut du slide si défilement mobile
         
         updateControls();
     }
@@ -513,7 +503,7 @@
         if(currentSlide < slides.length - 1) {
             goToSlide(currentSlide + 1);
         } else {
-            goToSlide(0);
+            goToSlide(0); // Boucle au début à la fin de la présentation
         }
     });
 
@@ -521,6 +511,7 @@
         if(currentSlide > 0) goToSlide(currentSlide - 1);
     });
 
+    // Navigation au clavier pour le confort de démonstration
     document.addEventListener('keydown', (e) => {
         if(e.key === 'ArrowRight') nextBtn.click();
         if(e.key === 'ArrowLeft') prevBtn.click();
